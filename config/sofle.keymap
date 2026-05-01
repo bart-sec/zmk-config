@@ -36,8 +36,8 @@
             display-name = "second";
             bindings = <
 &kp GRAVE &kp F1         &kp F2         &kp F3         &kp F4           &kp F5                 &kp F6    &kp F7    &kp F8    &kp F9    &kp F10 &kp F11
-&trans    &msc SCRL_UP   &mkp RCLK      &mmv MOVE_UP   &mkp LCLK        &trans                 &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans  &kp F12
-&kp LCAPS &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &trans                 &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans  &trans
+&trans    &trans   &mkp RCLK      &mmv MOVE_UP   &mkp LCLK        &trans                 &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans  &kp F12
+&kp LCAPS &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &trans                 &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans  &trans
 &trans    &trans         &trans         &kp LBKT       &kp LBRC         &kp LPAR &trans &trans &kp RPAR  &kp RBRC  &kp RBKT  &trans    &trans  &trans
                          &trans         &trans         &trans           &trans   &trans &trans &trans    &trans    &trans    &to 2        
             >;
@@ -46,12 +46,6 @@
         };
 
         config_layer {
-// ----------------------------------------------------------------------------------------------------------------------------
-// | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-// | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-// |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-// |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-//                    |         |         |         |         |         | |      |      |      |       |      |
             display-name = "config";
             bindings = <
 &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &none &none &none &none &none &none
