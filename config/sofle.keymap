@@ -15,8 +15,9 @@
 #define BASE 0
 #define SECOND 1
 #define CONFIG 2
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
+#define ZMK_MOUSE_SCRL_VAL 140
 
 / {
     behaviors {
@@ -25,6 +26,13 @@
             #sensor-binding-cells = <2>;
             bindings =  <&kp>, <&kp>;
         };
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <20>;
+        };
+
     };
 
 
@@ -54,7 +62,7 @@
                          &trans         &trans         &trans           &trans   &trans &trans &trans    &trans    &trans    &to 2        
             >;
 
-            sensor-bindings = <&rot_kp PG_UP PG_DN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         config_layer {
