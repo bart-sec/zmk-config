@@ -18,12 +18,13 @@
 
 / {
     behaviors {
-        scroll_encoder: scroll_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        rot_msc: sensor_rotate_msc {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
         };
     };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -51,7 +52,7 @@
                          &trans         &trans         &trans           &trans   &trans &trans &trans    &trans    &trans    &to 2        
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&rot_msc SCRL_DOWN SCRL_UP>;
         };
 
         config_layer {
