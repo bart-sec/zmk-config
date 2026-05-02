@@ -15,13 +15,15 @@
 #define BASE 0
 #define SECOND 1
 #define CONFIG 2
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 / {
     behaviors {
         rot_msc: sensor_rotate_msc {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
+            bindings =  <&kp>, <&kp>;
         };
     };
 
@@ -52,7 +54,7 @@
                          &trans         &trans         &trans           &trans   &trans &trans &trans    &trans    &trans    &to 2        
             >;
 
-            sensor-bindings = <&rot_msc SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&rot_kp PG_UP PG_DN>;
         };
 
         config_layer {
